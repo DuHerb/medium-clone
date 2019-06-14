@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from './../article.model';
+import { ArticleService } from './../article.service';
 
 @Component({
   selector: 'app-fp-hero',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FpHeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private artService: ArticleService) { }
 
   ngOnInit() {
   }
