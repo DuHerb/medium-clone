@@ -1,6 +1,11 @@
 # MediumClone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+## Author: Dustin Herboldshimer
+
+## Version 0.0.1
+###Updated: 6/14/2019
+
+This is a clone of the popular news/blog site, Medium.com, generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
 
 ## Development server
 
@@ -25,3 +30,20 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Known Bugs:
+
+### Support and contact details
+
+Contact Dustin Herboldshimer at dustnpdx@gmail.com
+
+## Technologies Used
+
+#### Angular 8.0.2
+
+### License
+
+Protected under the <a href="https://opensource.org/licenses/MIT">MIT License</a>
+
+Copyright (c) 2019 **Dustin Herboldshimer**
+
