@@ -17,14 +17,17 @@ export class FrontPageComponent implements OnInit {
   constructor( private catService: CategoryService, private artService: ArticleService) {
    }
 
+   // retieve array of categories for menu display
    getMasterCats(): void {
       this.categoryList = this.catService.getMasterCategories();
    }
 
+   // retrieve articles from ArticleService
    getArticles(): void {
      this.articles = this.artService.getArticles();
    }
 
+  // create mock articles to put in template sections
    addArticles(articlesRequested: number, category: string): void {
      this.artService.addArticles(articlesRequested, category);
    }

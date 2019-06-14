@@ -15,6 +15,7 @@ export class ArticleService {
     return this.masterArticles;
   }
 
+  // add a given number of articles in a specified categotry to the masterArticles array
   addArticles(articlesRequested: number, category: string): void {
     for (let i = 0; i < articlesRequested; i++) {
       const newArticle = this.buildMockArticle();
@@ -23,6 +24,7 @@ export class ArticleService {
     }
   }
 
+  // mock article template
   buildMockArticle(): Article {
     const newArticle = new Article();
     newArticle.id = this.idCounter;
