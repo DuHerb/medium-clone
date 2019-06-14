@@ -1,0 +1,19 @@
+.fp-hero-container {
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  margin: 12px auto 0;
+  align-items: stretch;
+}
+
+.fp-hero-largeCard {
+  display: flex;
+  flex-basis: 340px;
+  height: 100%;
+  width: 100%;
+  margin-right: 24px;
+}
