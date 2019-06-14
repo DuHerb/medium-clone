@@ -11,12 +11,14 @@
         <span class="avatar"><img src="./../../assets/img/avatar_circle.png"></span>
       </div>
     </div>
-    <nav class="flex">
-      <ul class="flex">
-        <li *ngFor="let cat of categoryList" class="fp-nav-item">
-          <a routerLink="/category/{{cat}}">{{cat}}</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="header-lower-bar flex">
+      <nav class="flex">
+        <div class="flex">
+          <li *ngFor="let cat of categoryList" class="fp-nav-item">
+            <a routerLink="/category/{{cat}}">{{cat | uppercase}} </a>
+          </li>
+        </div>
+      </nav>
+    </div>
   </header>
 </div>
