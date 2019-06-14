@@ -1,0 +1,41 @@
+header {
+  position: absolute;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+}
+
+.header-upper-bar {
+  position: relative;
+  max-width: 1032px;
+  height: 65px;
+  padding: 0 20px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.header-logo img {
+  height: 22px;
+}
+
+.header-button-set span {
+  margin-right: 16px;
+  vertical-align: bottom;
+}
+
+.upgrade-button {
+  height: 32px;
+  padding: 0 14px;
+  line-height: 32px;
+  margin-right: 16px;
+}
+
+.flexCenter{
+  display: flex;
+  align-items: center;
+}
+
+.front-page {
+  height: 100%;
+  background-color: #fff;
+}
