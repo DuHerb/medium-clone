@@ -28,6 +28,16 @@ header {
   padding: 0 14px;
   line-height: 32px;
   margin-right: 16px;
+  backgound-color: white;
+  background: white;
+  box-shadow: none;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.avatar img {
+  width: 32px;
+  vertical-align: bottom;
 }
 
 .flexCenter{
