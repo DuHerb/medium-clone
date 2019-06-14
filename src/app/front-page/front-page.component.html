@@ -1,6 +1,6 @@
 <div class="front-page front-page-container">
   <header>
-    <div class="header-upper-bar flexCenter">
+    <div class="header-upper-bar flex">
       <div class="logo-container">
         <a routerLink="/Medium"><span class="header-logo"><img src="./../../assets/img/mediumLogo.png"></span></a>
       </div>
@@ -11,5 +11,12 @@
         <span class="avatar"><img src="./../../assets/img/avatar_circle.png"></span>
       </div>
     </div>
+    <nav class="flex">
+      <ul class="flex">
+        <li *ngFor="let cat of categoryList" class="fp-nav-item">
+          <a routerLink="/category/{{cat}}">{{cat}}</a>
+        </li>
+      </ul>
+    </nav>
   </header>
-</div> 
+</div>

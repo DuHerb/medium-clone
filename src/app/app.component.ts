@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'medium-clone';
+  title = 'Medium CLone';
+
+  masterCategoryList: string[] = [
+    'home', 'onezero', 'elemental', 'gen', 'startups', 'self', 'tech', 'heated', 'zora', 'design', 'culture', 'human parts', 'more'
+  ];
 }
