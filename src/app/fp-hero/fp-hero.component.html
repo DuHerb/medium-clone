@@ -1,0 +1,29 @@
+<section class="fp-content-container">
+    <div class="fp-hero-container">
+      <article class="fp-hero-largeCard">
+        <div class="fp-hero-post">
+          <a class="fp-hero-post-image"[ngStyle]="{'background': 'url(' + getUrl(articles[0]) + ') no-repeat 0 0 / cover'}"> </a>
+          <div class="fp-post-content">
+            <h2>{{articles[0].title}}</h2>
+            <p>{{articles[0].tagLine}}</p>
+            <p><b>{{articles[0].author}} in {{articles[0].mainCategory}}</b></p>
+            <p>{{articles[0].pubDate}} - {{articles[0].readTime}} min read</p>
+          </div>
+        </div>
+      </article>
+      <div class="fp-hero-smallCard-container">
+        <article class="fp-hero-smallCard">
+          <div class="fp-hero-post"></div>
+        </article>
+        <article class="fp-hero-smallCard">
+            <div class="fp-hero-post"></div>
+          </article>
+          <article class="fp-hero-smallCard">
+              <div class="fp-hero-post"></div>
+            </article>
+      </div>
+      <article class="fp-hero-largeCard">
+        <div class="fp-hero-post"></div>
+      </article>
+    </div>
+  </section>
