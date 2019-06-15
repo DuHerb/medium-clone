@@ -15,6 +15,10 @@ export class ArticleService {
     return this.masterArticles;
   }
 
+  clearArticles(): void {
+    this.masterArticles = [];
+  }
+
   // add a given number of articles in a specified categotry to the masterArticles array
   addArticles(articlesRequested: number, category: string): void {
     for (let i = 0; i < articlesRequested; i++) {
@@ -22,6 +26,13 @@ export class ArticleService {
       newArticle.mainCategory = category;
       this.masterArticles.push(newArticle);
     }
+  }
+
+  addFeaturedArticles(articlesRequested: number, category: string) {
+    const newArticle = this.buildMockArticle();
+    newArticle.mainCategory = category;
+    newArticle.featured = true;
+    this.masterArticles.push(newArticle);
   }
 
   // mock article template
@@ -38,6 +49,7 @@ export class ArticleService {
     newArticle.mainCategory = '';
     newArticle.tags = [];
     newArticle.claps = 0;
+    newArticle.featured = false;
 // tslint:disable-next-line: max-line-length
     newArticle.body = 'Elit laborum qui elit ut aliqua et qui magna labore elit. Ad sint eu minim fugiat aute quis voluptate aute consequat deserunt consequat deserunt irure esse. Sit consectetur qui voluptate qui tempor dolore ut aliqua.';
 

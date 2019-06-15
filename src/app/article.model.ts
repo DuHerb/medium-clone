@@ -10,4 +10,5 @@ export class Article {
   mainCategory: string;
   tags: string[];
   claps: number;
+  featured: boolean;
 }

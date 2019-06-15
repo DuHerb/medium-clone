@@ -36,6 +36,7 @@
     <p>tags: {{article.tags}}</p>
     <p>claps: {{article.claps}}</p>
     <p>text: {{article.body}}</p>
+    <p *ngIf="article.featured == true">featured article</p>
   </div>
 </div>
 

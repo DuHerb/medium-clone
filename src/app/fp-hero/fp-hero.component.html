@@ -1,7 +1,7 @@
 <section class="fp-content-container">
     <div class="fp-hero-container">
-      <article class="fp-hero-largeCard">
-        <div class="fp-hero-post"></div>
+      <article class="fp-hero-largeCard" *ngFor="let article of articles">
+        <div class="fp-hero-post" *ngIf="article.featured == true">{{article.title}}</div>
       </article>
       <div class="fp-hero-smallCard-container">
         <article class="fp-hero-smallCard">
