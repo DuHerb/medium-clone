@@ -27,8 +27,6 @@ export class FpHeroComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.addArticles(2, 'heated');
-    this.addArticles(1, 'self');
     this.addFeaturedArticles(2, 'life');
     this.addFeaturedArticles(3, 'tech');
     this.getArticles();

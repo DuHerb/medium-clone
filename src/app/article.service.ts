@@ -29,10 +29,12 @@ export class ArticleService {
   }
 
   addFeaturedArticles(articlesRequested: number, category: string) {
-    const newArticle = this.buildMockArticle();
-    newArticle.mainCategory = category;
-    newArticle.featured = true;
-    this.masterArticles.push(newArticle);
+    for (let i = 0; i < articlesRequested; i++) {
+      const newArticle = this.buildMockArticle();
+      newArticle.mainCategory = category;
+      newArticle.featured = true;
+      this.masterArticles.push(newArticle);
+    }
   }
 
   // mock article template

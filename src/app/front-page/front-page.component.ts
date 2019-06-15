@@ -34,7 +34,6 @@ export class FrontPageComponent implements OnInit {
 
   ngOnInit() {
     this.getMasterCats();
-    this.addArticles(3, 'tech');
     this.addArticles(2, 'heated');
     this.addArticles(1, 'self');
     this.getArticles();
