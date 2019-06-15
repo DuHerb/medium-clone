@@ -12,9 +12,15 @@ export class FpHeroComponent implements OnInit {
 
   articles: Article[];
 
+  // backgroundUrl: string;
+
   // retrieve articles from ArticleService
   getArticles(): void {
     this.articles = this.artService.getArticles();
+  }
+
+  getUrl(article: Article) {
+    return article.imgUrl;
   }
 
  // create mock articles to put in template sections

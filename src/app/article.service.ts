@@ -47,7 +47,7 @@ export class ArticleService {
     newArticle.author = 'Nicholas Mars';
     newArticle.imgUrl = './../assets/img/seedImage.jpeg';
     newArticle.pubDate = 'June 14';
-    newArticle.readLength = '5';
+    newArticle.readTime = '5';
     newArticle.mainCategory = '';
     newArticle.tags = [];
     newArticle.claps = 0;

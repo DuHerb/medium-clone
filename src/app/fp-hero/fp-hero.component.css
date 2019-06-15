@@ -1,3 +1,5 @@
+/* TODO change font colors to gray */
+
 .fp-hero-container {
   padding: 0 16px 16px;
   display: flex;
@@ -12,8 +14,22 @@
 
 .fp-hero-largeCard {
   display: flex;
-  flex-basis: 340px;
+  flex-basis: 320px;
   height: 100%;
   width: 100%;
   margin-right: 24px;
+}
+
+.fp-hero-post {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fp-hero-post-image {
+  min-height: 150px;
+  margin-bottom: 16px;
+  background-position: 51% 33%;
+  position: relative;
+  float: right;
 }

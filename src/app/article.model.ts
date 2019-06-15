@@ -5,7 +5,7 @@ export class Article {
   author: string;
   imgUrl: string;
   pubDate: string;
-  readLength: string;
+  readTime: string;
   body: string;
   mainCategory: string;
   tags: string[];
