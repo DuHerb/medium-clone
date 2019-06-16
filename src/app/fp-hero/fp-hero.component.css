@@ -38,13 +38,16 @@
   font-weight: 600;
   max-height: 84px;
   overflow: hidden;
+  margin-bottom: 4px;
 }
 
 .fp-hero-post .fp-post-tagLine {
   max-height: 60px;
   font-weight: 400;
   overflow: hidden;
-  color: #969696;
+  color: #838383;
+  font-size: 14px;
+  margin: 0;
 }
 
 .fp-hero-byLine {
