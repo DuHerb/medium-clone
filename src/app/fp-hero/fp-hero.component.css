@@ -33,3 +33,40 @@
   position: relative;
   float: right;
 }
+
+.fp-hero-post .fp-post-title {
+  font-weight: 600px;
+  max-height: 84px;
+  overflow: hidden;
+}
+
+.fp-hero-post .fp-post-tagLine {
+  max-height: 60px;
+  font-weight: 400px;
+  overflow: hidden;
+  color: #969696;
+}
+
+.fp-hero-byLine {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.fp-hero-byLine .fp-post-author {
+  margin-bottom: 0;
+  color: #444444;
+  font-weight: 200;
+}
+
+.fp-hero-byLine .fp-post-pubDate {
+  margin: 0;
+  color:#757575;
+}
+
+.star-svg {
+  width: 14px;
+  margin-left: 5px;
+}

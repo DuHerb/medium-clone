@@ -2,12 +2,14 @@
     <div class="fp-hero-container">
       <article class="fp-hero-largeCard">
         <div class="fp-hero-post">
-          <a class="fp-hero-post-image"[ngStyle]="{'background': 'url(' + getUrl(articles[0]) + ') no-repeat 0 0 / cover'}"> </a>
+          <a class="fp-hero-post-image"[ngStyle]="{'background': 'url(' + getUrl(featuredArticles[0]) + ') no-repeat 0 0 / cover'}"> </a>
           <div class="fp-post-content">
-            <h2>{{articles[0].title}}</h2>
-            <p>{{articles[0].tagLine}}</p>
-            <p><b>{{articles[0].author}} in {{articles[0].mainCategory}}</b></p>
-            <p>{{articles[0].pubDate}} - {{articles[0].readTime}} min read</p>
+            <h2 class="fp-post-title">{{featuredArticles[0].title}}</h2>
+            <p class="fp-post-tagLine">{{featuredArticles[0].tagLine}}</p>
+            <div class="fp-hero-byLine">
+              <p class="fp-post-author"><b>{{featuredArticles[0].author}} in {{featuredArticles[0].mainCategory}}</b></p>
+              <p class="fp-post-pubDate">{{featuredArticles[0].pubDate}} <span>&middot;</span> {{featuredArticles[0].readTime}} min read<img class="star-svg" src="./../../assets/img/star.png" alt=""></p>
+            </div>
           </div>
         </div>
       </article>
