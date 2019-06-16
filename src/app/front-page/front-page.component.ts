@@ -39,18 +39,18 @@ export class FrontPageComponent implements OnInit {
     this.getArticles();
   }
 
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowScroll(e) {
-  //    if (window.pageYOffset > 65) {
-  //      const element = document.getElementById('stickyNav');
-  //      element.classList.add('stuck');
-  //      console.log('offset');
-  //    } else {
-  //     const element = document.getElementById('stickyNav');
-  //     element.classList.remove('stuck');
-  //     console.log('not offset');
-  //    }
-  // }
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+     if (window.pageYOffset > 65) {
+       const element = document.getElementById('stickyNav');
+       element.classList.add('stuck');
+       console.log('offset');
+     } else {
+      const element = document.getElementById('stickyNav');
+      element.classList.remove('stuck');
+      console.log('not offset');
+     }
+  }
 
 }
 
