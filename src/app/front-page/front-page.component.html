@@ -1,4 +1,4 @@
-<div class="front-page front-page-container">
+<div class="front-page front-page-container" (scroll)="onWindowScroll($event);">
   <header>
     <div class="header-upper-bar flex">
       <div class="logo-container">
@@ -11,7 +11,7 @@
         <span class="avatar"><img src="./../../assets/img/avatar_circle.png"></span>
       </div>
     </div>
-    <div class="header-lower-bar flex">
+    <div id="stickyNav" class="header-lower-bar flex">
       <nav class="flex">
         <div class="flex">
           <li *ngFor="let cat of categoryList" class="fp-nav-item">
@@ -23,6 +23,10 @@
   </header>
 
 <app-fp-hero></app-fp-hero>
+<div class="featured-link">
+  <a>See all featured ></a>
+</div>
+<div class="hero-divider"></div>
 
   <div *ngFor="let article of articles">
     <p>id: {{article.id}}</p>

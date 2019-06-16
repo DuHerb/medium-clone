@@ -10,14 +10,28 @@
   position: relative;
   margin: 12px auto 0;
   align-items: stretch;
+  max-width: 1208px;
+  box-align: stretch;
 }
 
 .fp-hero-largeCard {
   display: flex;
-  flex-basis: 320px;
+  flex-basis: 340px;
   height: 100%;
   width: 100%;
   margin-right: 24px;
+  flex: 0 1 auto;
+}
+
+.fp-hero-mediumCard {
+  display: flex;
+  flex-basis: 240px;
+  flex: 0 1 auto;
+  height: 100%;
+  width: 100%;
+  margin-right: 24px;
+  max-width: 323px;
+  position: relative;
 }
 
 .fp-hero-post {
@@ -32,6 +46,7 @@
   background-position: 51% 33%;
   position: relative;
   float: right;
+  /* flex: 0 1 auto; */
 }
 
 .fp-hero-post .fp-post-title {
@@ -72,4 +87,10 @@
 .star-svg {
   width: 14px;
   margin-left: 5px;
+}
+
+@media only screen and (max-width: 1018px) {
+.fp-hero-mediumCard {
+    display: none;
+  }
 }

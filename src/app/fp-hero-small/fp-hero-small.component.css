@@ -9,6 +9,8 @@
 .fp-hero-smallCard {
   margin-bottom: 20px;
   width: 100%;
+  min-width: 390px;
+  margin-right: 24px;
 }
 
 .fp-hero-post {
