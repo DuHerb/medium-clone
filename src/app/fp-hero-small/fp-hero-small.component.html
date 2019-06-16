@@ -1,11 +1,7 @@
 <div class="fp-hero-smallCard-container">
-    <article class="fp-hero-smallCard">
-      <div class="fp-hero-post"></div>
+    <article class="fp-hero-smallCard" *ngFor="let article of smallArticles">
+      <div class="fp-hero-post">
+        <p>{{article.title}}</p>
+      </div>
     </article>
-    <article class="fp-hero-smallCard">
-        <div class="fp-hero-post"></div>
-      </article>
-      <article class="fp-hero-smallCard">
-          <div class="fp-hero-post"></div>
-      </article>
   </div>

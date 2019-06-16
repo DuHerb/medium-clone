@@ -7,10 +7,18 @@ import { Article } from './../article.model';
   styleUrls: ['./fp-hero-small.component.css']
 })
 export class FpHeroSmallComponent implements OnInit {
-@Input() heroSmallArticles: Article[];
+@Input() featuredArticles: Article[];
+
+  smallArticles: Article[];
   constructor() { }
 
+  pullArticles(): void {
+
+    this.smallArticles = this.featuredArticles.slice(1, 4);
+  }
+
   ngOnInit() {
+    this.pullArticles();
   }
 
 }
