@@ -17,6 +17,10 @@ export class FpHeroSmallComponent implements OnInit {
     this.smallArticles = this.featuredArticles.slice(1, 4);
   }
 
+  getUrl(article: Article) {
+    return article.imgUrl;
+  }
+
   ngOnInit() {
     this.pullArticles();
   }

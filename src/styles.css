@@ -2,3 +2,21 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.no-margin {
+  margin: 0;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.star-svg {
+  width: 14px;
+  margin-left: 5px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
