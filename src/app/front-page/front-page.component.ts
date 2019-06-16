@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CategoryService } from './../category.service';
 import { ArticleService } from '../article.service';
 import { Article } from '../article.model';
@@ -10,9 +10,9 @@ import { Article } from '../article.model';
 })
 export class FrontPageComponent implements OnInit {
   // @Input() categoryList: string[];
+
   categoryList: string[];
   articles: Article[];
-
 
   constructor( private catService: CategoryService, private artService: ArticleService) {
    }
@@ -37,6 +37,19 @@ export class FrontPageComponent implements OnInit {
     this.addArticles(2, 'heated');
     this.addArticles(1, 'self');
     this.getArticles();
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+     if (window.pageYOffset > 65) {
+       const element = document.getElementById('stickyNav');
+       element.classList.add('stuck');
+       console.log('offset');
+     } else {
+      const element = document.getElementById('stickyNav');
+      element.classList.remove('stuck');
+      console.log('not offset');
+     }
   }
 
 }

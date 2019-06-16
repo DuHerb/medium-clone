@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.star-svg {
+  width: 14px;
+  margin-left: 5px;
+  transform: translateY(17%);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.stuck {
+  position: fixed !important;
+  top: 0;
+  z-index: 500;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+  transform: translateY(-65px);
+}

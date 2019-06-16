@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { FpHeroComponent } from './fp-hero/fp-hero.component';
+import { FpHeroSmallComponent } from './fp-hero-small/fp-hero-small.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FrontPageComponent,
-    FpHeroComponent
+    FpHeroComponent,
+    FpHeroSmallComponent
   ],
   imports: [
     BrowserModule,

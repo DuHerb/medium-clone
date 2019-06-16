@@ -11,12 +11,17 @@ export class FpHeroComponent implements OnInit {
   constructor(private artService: ArticleService) { }
 
   articles: Article[];
+  featuredArticles: Article[];
 
   // backgroundUrl: string;
 
   // retrieve articles from ArticleService
   getArticles(): void {
     this.articles = this.artService.getArticles();
+  }
+
+  getFeaturedArticles(): void {
+    this.featuredArticles = this.artService.getFeaturedArticles();
   }
 
   getUrl(article: Article) {
@@ -35,7 +40,7 @@ export class FpHeroComponent implements OnInit {
   ngOnInit() {
     this.addFeaturedArticles(2, 'life');
     this.addFeaturedArticles(3, 'tech');
-    this.getArticles();
+    this.getFeaturedArticles();
   }
 
 }

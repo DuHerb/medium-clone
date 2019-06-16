@@ -1,0 +1,14 @@
+<div class="fp-hero-smallCard-container">
+    <article class="fp-hero-smallCard" *ngFor="let article of smallArticles">
+      <div class="fp-hero-post">
+        <a class="fp-hero-post-image"[ngStyle]="{'background': 'url(' + getUrl(article) + ') no-repeat 0 0 / cover'}"> </a>
+        <div class="flex">
+          <p class="fp-hero-smallCard-title no-margin">{{article.title}}</p>
+          <div class="flexCol fp-hero-smallCard-byLine nowrap">
+              <p class="fp-hero-smallCard-author"><b>{{article.author}} in {{article.mainCategory}}</b></p>
+              <p class="fp-hero-smallCard-pubDate">{{article.pubDate}} <span>&middot;</span> {{article.readTime}} min read<img class="star-svg" src="./../../assets/img/star.png" alt=""></p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>

@@ -1,5 +1,5 @@
-<div class="front-page front-page-container">
-  <header>
+<div class="front-page front-page-container" (scroll)="onWindowScroll($event);">
+  <header id="stickyNav" class="">
     <div class="header-upper-bar flex">
       <div class="logo-container">
         <a routerLink="/Medium"><span class="header-logo"><img src="./../../assets/img/mediumLogo.png"></span></a>
@@ -23,6 +23,10 @@
   </header>
 
 <app-fp-hero></app-fp-hero>
+<div class="featured-link">
+  <a>See all featured ></a>
+</div>
+<div class="hero-divider"></div>
 
   <div *ngFor="let article of articles">
     <p>id: {{article.id}}</p>
