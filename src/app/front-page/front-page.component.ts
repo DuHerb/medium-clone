@@ -9,7 +9,6 @@ import { Article } from '../article.model';
   styleUrls: ['./front-page.component.css']
 })
 export class FrontPageComponent implements OnInit {
-  // @Input() categoryList: string[];
 
   categoryList: string[];
   articles: Article[];
@@ -39,6 +38,7 @@ export class FrontPageComponent implements OnInit {
     this.getArticles();
   }
 
+  // listen for scroll event to trigger sticky nav bar
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
      if (window.pageYOffset > 65) {

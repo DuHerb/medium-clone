@@ -19,7 +19,7 @@ export class ArticleService {
     this.masterArticles = [];
   }
 
-  // add a given number of articles in a specified categotry to the masterArticles array
+  // add a given number of mock articles in a specified categotry to this.masterArticles array
   addArticles(articlesRequested: number, category: string): void {
     for (let i = 0; i < articlesRequested; i++) {
       const newArticle = this.buildMockArticle();
@@ -28,6 +28,7 @@ export class ArticleService {
     }
   }
 
+  // add a given number of mock articles in a specified category, designated as featured, to this.masterArticles array
   addFeaturedArticles(articlesRequested: number, category: string) {
     for (let i = 0; i < articlesRequested; i++) {
       const newArticle = this.buildMockArticle();

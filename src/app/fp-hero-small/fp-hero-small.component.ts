@@ -6,14 +6,14 @@ import { Article } from './../article.model';
   templateUrl: './fp-hero-small.component.html',
   styleUrls: ['./fp-hero-small.component.css']
 })
+
 export class FpHeroSmallComponent implements OnInit {
 @Input() featuredArticles: Article[];
 
   smallArticles: Article[];
   constructor() { }
 
-  pullArticles(): void {
-
+  getSmallCardArticles(): void {
     this.smallArticles = this.featuredArticles.slice(1, 4);
   }
 
@@ -22,7 +22,7 @@ export class FpHeroSmallComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pullArticles();
+    this.getSmallCardArticles();
   }
 
 }

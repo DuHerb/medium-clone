@@ -13,9 +13,7 @@ export class FpHeroComponent implements OnInit {
   articles: Article[];
   featuredArticles: Article[];
 
-  // backgroundUrl: string;
-
-  // retrieve articles from ArticleService
+  // made redundant by getFeaturedArticles() - remove and test before finishing
   getArticles(): void {
     this.articles = this.artService.getArticles();
   }
