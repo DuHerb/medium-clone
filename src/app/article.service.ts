@@ -78,14 +78,5 @@ export class ArticleService {
 
     return newArticle;
   }
-
-
 }
 
-      // title: "some string"
-      // tagline: article.tagline,
-      // author: article.author,
-      // category: article.category,
-      // body: article.body,
-      // readtime: article.readTime,
-      // isFeatured: article.isFeatured
