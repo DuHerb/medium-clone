@@ -54,6 +54,13 @@
         {{article.body}}
       </li>
     </ul>
+
+    <ul>Categories from Firestore
+        <li class="text" *ngFor="let cat of categories | async">
+          {{cat.name}}
+          <p *ngFor="let name of cat.cats">{{name}}</p>
+        </li>
+      </ul>
 </div>
 
 

@@ -14,6 +14,7 @@ export class FrontPageComponent implements OnInit {
   categoryList: string[];
   articles: Article[];
   items: Observable<any[]>;
+  categories: Observable<any>;
 
   constructor( private catService: CategoryService, private artService: ArticleService, private db: AngularFirestore) {
    }
@@ -23,6 +24,10 @@ export class FrontPageComponent implements OnInit {
    // retieve array of categories for menu display
    getMasterCats(): void {
       this.categoryList = this.catService.getMasterCategories();
+   }
+
+   getFScats(): void {
+     this.categories = this.catService.getFScats();
    }
 
    // retrieve articles from ArticleService
@@ -45,6 +50,7 @@ export class FrontPageComponent implements OnInit {
     this.addArticles(1, 'self');
     this.getArticles();
     this.getDB();
+    this.getFScats();
   }
 
   // listen for scroll event to trigger sticky nav bar
