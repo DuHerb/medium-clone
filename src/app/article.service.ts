@@ -1,15 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Article } from './../app/article.model';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
-
-  constructor() { }
   idCounter = 0;
-
   masterArticles: Article[] = [];
+
+  private articlesCollection: AngularFirestoreCollection<Article>;
+  articles: Observable<Article[]>;
+
+  constructor(private afs: AngularFirestore) {
+    this.articlesCollection = this.afs.collection<Article>('articles');
+    this.articles = this.articlesCollection.valueChanges();
+  }
+
+  getFSarticles(): Observable<Article[]> {
+    return this.articles;
+  }
 
   getArticles(): Article[] {
     return this.masterArticles;
