@@ -75,7 +75,6 @@ export class ArticleService {
     newArticle.pubDate = 'June 14';
     newArticle.tags = [];
     newArticle.claps = 0;
-    console.log('from service: ', newArticle.claps);
 
     return newArticle;
   }
