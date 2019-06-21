@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
+import { Article } from '../article.model';
+import { ParsedEventType } from '@angular/compiler';
 
 @Component({
   selector: 'app-admin',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private artService: ArticleService) { }
+
+  submitNewArticle(title: string, author: string, tagline: string, isFeatured: boolean, category: string, readtime: string, body: string) {
+    const newArticle = new Article(title, tagline, author, category, body, readtime, isFeatured);
+    console.log(newArticle);
+  }
 
   ngOnInit() {
   }
