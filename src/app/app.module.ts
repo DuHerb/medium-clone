@@ -13,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireStorageModule} from '@angular/fire/storage';
 import { environment } from '../environments/environment';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { environment } from '../environments/environment';
     FrontPageComponent,
     FpHeroComponent,
     FpHeroSmallComponent,
-    FpMainContentComponent
+    FpMainContentComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
