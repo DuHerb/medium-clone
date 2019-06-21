@@ -10,16 +10,20 @@ export class ArticleService {
   idCounter = 0;
   masterArticles: Article[] = [];
 
-  private articlesCollection: AngularFirestoreCollection<Article>;
+  private articlesCollection: AngularFirestoreCollection<any>;
   articles: Observable<Article[]>;
 
   constructor(private afs: AngularFirestore) {
-    this.articlesCollection = this.afs.collection<Article>('articles');
+    this.articlesCollection = this.afs.collection<any>('articles');
     this.articles = this.articlesCollection.valueChanges();
   }
 
   getFSarticles(): Observable<Article[]> {
     return this.articles;
+  }
+
+  addFSarticle(article: Article): void {
+    this.articlesCollection.add(article.getData());
   }
 
   getArticles(): Article[] {
@@ -71,9 +75,18 @@ export class ArticleService {
     newArticle.pubDate = 'June 14';
     newArticle.tags = [];
     newArticle.claps = 0;
+    console.log('from service: ', newArticle.claps);
 
     return newArticle;
   }
 
 
 }
+
+      // title: "some string"
+      // tagline: article.tagline,
+      // author: article.author,
+      // category: article.category,
+      // body: article.body,
+      // readtime: article.readTime,
+      // isFeatured: article.isFeatured
