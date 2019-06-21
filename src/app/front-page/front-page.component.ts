@@ -36,7 +36,7 @@ export class FrontPageComponent implements OnInit {
    }
 
    getDB(): void {
-     this.items = this.db.collection('articles').valueChanges();
+     this.items = this.artService.getFSarticles();
    }
 
   ngOnInit() {
