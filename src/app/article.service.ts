@@ -34,7 +34,7 @@ export class ArticleService {
   addArticles(articlesRequested: number, category: string): void {
     for (let i = 0; i < articlesRequested; i++) {
       const newArticle = this.buildMockArticle();
-      newArticle.mainCategory = category;
+      newArticle.category = category;
       this.masterArticles.push(newArticle);
     }
   }
@@ -43,7 +43,7 @@ export class ArticleService {
   addFeaturedArticles(articlesRequested: number, category: string) {
     for (let i = 0; i < articlesRequested; i++) {
       const newArticle = this.buildMockArticle();
-      newArticle.mainCategory = category;
+      newArticle.category = category;
       newArticle.isFeatured = true;
       this.masterArticles.push(newArticle);
     }
@@ -55,21 +55,22 @@ export class ArticleService {
 
   // mock article template
   buildMockArticle(): Article {
-    const newArticle = new Article();
+    const title = 'This is a mock title';
+    const author = 'nick mars';
+    const tagline = 'this is a mock tagline from firebase';
+    const readtime = '6';
+    const featured = false;
+    const category = 'mock';
+// tslint:disable-next-line: max-line-length
+    const body = 'Elit laborum qui elit ut aliqua et qui magna labore elit. Ad sint eu minim fugiat aute quis voluptate aute consequat deserunt consequat deserunt irure esse. Sit consectetur qui voluptate qui tempor dolore ut aliqua.';
+
+    const newArticle = new Article(title, tagline, author, category, body, readtime, featured);
     newArticle.id = this.idCounter;
     this.idCounter++;
-    newArticle.title = 'This is a sample title';
-    newArticle.tagLine = 'catchy phrase goes here';
-    newArticle.author = 'Nicholas Mars';
     newArticle.imgUrl = './../assets/img/seedImage.jpeg';
     newArticle.pubDate = 'June 14';
-    newArticle.readTime = '5';
-    newArticle.mainCategory = '';
     newArticle.tags = [];
     newArticle.claps = 0;
-    newArticle.isFeatured = false;
-// tslint:disable-next-line: max-line-length
-    newArticle.body = 'Elit laborum qui elit ut aliqua et qui magna labore elit. Ad sint eu minim fugiat aute quis voluptate aute consequat deserunt consequat deserunt irure esse. Sit consectetur qui voluptate qui tempor dolore ut aliqua.';
 
     return newArticle;
   }
