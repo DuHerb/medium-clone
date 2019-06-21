@@ -8,6 +8,12 @@ import { FpHeroComponent } from './fp-hero/fp-hero.component';
 import { FpHeroSmallComponent } from './fp-hero-small/fp-hero-small.component';
 import { FpMainContentComponent } from './fp-main-content/fp-main-content.component';
 
+// import { AngularFireDatabase} from 'angular/fire/database';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireStorageModule} from '@angular/fire/storage';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +25,10 @@ import { FpMainContentComponent } from './fp-main-content/fp-main-content.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
