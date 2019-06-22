@@ -9,11 +9,16 @@ export class CategoryService {
   private categoriesCollection: AngularFirestoreCollection<any>;
   categories: Observable<string[]>;
 
+  private itemDoc: AngularFirestoreDocument<any>;
+  item: Observable<any>;
+
   constructor(private afs: AngularFirestore) {
     this.categoriesCollection = this.afs.collection('categories');
     this.categories = this.categoriesCollection.valueChanges();
     console.log('from cat service: ', this.categories);
 
+    this.itemDoc = afs.doc<any>('categories/mdOs8rrOfJZwv1SdKGsC');
+    this.item = this.itemDoc.valueChanges();
    }
 
   masterCategoryList: string[] = [
@@ -26,5 +31,9 @@ export class CategoryService {
 
   getFScats() {
     return this.categories;
+  }
+
+  getCats() {
+    return this.item;
   }
 }

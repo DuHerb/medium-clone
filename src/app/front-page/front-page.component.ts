@@ -15,6 +15,8 @@ export class FrontPageComponent implements OnInit {
   articles: Article[];
   items: Observable<any[]>;
   categories: Observable<any>;
+  item: Observable<any>;
+  catArray: string[] = [];
 
   constructor( private catService: CategoryService, private artService: ArticleService, private db: AngularFirestore) {
    }
@@ -44,6 +46,14 @@ export class FrontPageComponent implements OnInit {
      this.items = this.artService.getFSarticles();
    }
 
+   getItem(): void {
+     this.item = this.catService.getCats();
+     this.item.subscribe(item => {
+      item.cats.forEach(element => { this.catArray.push(element);
+      });
+    });
+   }
+
   ngOnInit() {
     this.getMasterCats();
     this.addArticles(2, 'heated');
@@ -51,6 +61,7 @@ export class FrontPageComponent implements OnInit {
     this.getArticles();
     this.getDB();
     this.getFScats();
+    this.getItem();
   }
 
   // listen for scroll event to trigger sticky nav bar
@@ -59,11 +70,11 @@ export class FrontPageComponent implements OnInit {
      if (window.pageYOffset > 65) {
        const element = document.getElementById('stickyNav');
        element.classList.add('stuck');
-       console.log('offset');
+      //  console.log('offset');
      } else {
       const element = document.getElementById('stickyNav');
       element.classList.remove('stuck');
-      console.log('not offset');
+      // console.log('not offset');
      }
   }
 
