@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from './../article.model';
 
 @Component({
   selector: 'app-fp-main-content',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FpMainContentComponent implements OnInit {
 
+  article: Article;
+  featuredArticles: Article[];
+
   constructor() { }
+
+  getUrl(article: Article) {
+    return article.imgUrl;
+  }
 
   ngOnInit() {
   }
