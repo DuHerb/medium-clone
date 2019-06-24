@@ -1,0 +1,50 @@
+<a routerLink="/">Front Page</a>
+
+<h3>Create New Article</h3>
+<div>
+  <div>
+    <label>Article Title:</label>
+    <br>
+    <input type='text' #newTitle>
+  </div>
+
+  <div>
+    <label>Author:</label>
+    <br>
+    <input type='text'#newAuthor>
+  </div>
+
+  <div>
+    <label>Tag Line:</label>
+    <br>
+    <input type="text" #newTagline>
+  </div>
+
+  <div>
+    <label>Featured?:</label>
+    <br>
+    <select name="isFeatured" #isFeatured>
+      <option value=false selected>False</option>
+      <option value=true>True</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Category:</label>
+    <br>
+    <input type="text" #newCategory>
+  </div>
+
+  <div>
+      <label>Readtime (minutes):</label>
+      <br>
+      <input type="text" #newReadtime>
+    </div>
+
+  <div>
+    <label>Body:</label>
+    <br>
+    <textarea #newBody></textarea>
+  </div>
+</div>
+<button (click)="submitNewArticle(newTitle.value, newAuthor.value, newTagline.value, isFeatured.value, newCategory.value, newReadtime.value, newBody.value); newTitle.value=''; newAuthor.value=''; newTagline.value=''; isFeatured.value=''; newCategory.value=''; newReadtime.value=''; newBody.value=''">Add</button>

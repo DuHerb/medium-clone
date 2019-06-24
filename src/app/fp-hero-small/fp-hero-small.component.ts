@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from './../article.model';
+import { Observable } from 'rxjs';
+import { ArticleService } from '../article.service';
+
 
 @Component({
   selector: 'app-fp-hero-small',
@@ -9,13 +12,20 @@ import { Article } from './../article.model';
 
 export class FpHeroSmallComponent implements OnInit {
 @Input() featuredArticles: Article[];
+@Input() articles: Observable<any[]>;
 
   smallArticles: Article[];
-  constructor() { }
+  afsArticles: Observable<any[]>;
+  // articles: Observable<any[]>;
+  constructor(private as: ArticleService) { }
 
   getSmallCardArticles(): void {
     this.smallArticles = this.featuredArticles.slice(1, 4);
   }
+
+  // getSmallFScardArticles(): void {
+  //   this.smallFSarticles = this.articles.slice(1, 4);
+  // }
 
   getUrl(article: Article) {
     return article.imgUrl;
@@ -23,6 +33,10 @@ export class FpHeroSmallComponent implements OnInit {
 
   ngOnInit() {
     this.getSmallCardArticles();
+    console.log('from front-page: ', this.articles);
+
+    this.afsArticles = this.as.getFSarticles();
+    console.log('from database: ', this.afsArticles);
   }
 
 }

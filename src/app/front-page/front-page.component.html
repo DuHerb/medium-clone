@@ -14,7 +14,7 @@
     <div class="header-lower-bar flex">
       <nav class="flex">
         <div class="flex">
-          <li *ngFor="let cat of categoryList" class="fp-nav-item">
+          <li *ngFor="let cat of catArray" class="fp-nav-item">
             <a routerLink="/category/{{cat}}">{{cat | uppercase}} </a>
           </li>
         </div>
@@ -24,6 +24,7 @@
 
 <app-fp-hero></app-fp-hero>
 <div class="featured-link">
+  <a routerLink="admin">Admin</a>
   <a>See all featured ></a>
 </div>
 <div class="hero-divider"></div>
@@ -52,6 +53,19 @@
         {{article.title}}<br>
         {{article.body}}
       </li>
+    </ul>
+
+    <ul>Categories from Firestore
+        <li class="text" *ngFor="let cat of categories | async">
+          <p *ngFor="let name of cat.cats">{{name}}</p>
+        </li>
+      </ul>
+
+    <ul>Single Item test
+      <!-- <li>{{(item | async)?.name}}</li>
+      <li>{{(item | async)?.cats[0]}}</li>
+      <li>{{(item | async)?.cats[1]}}</li> -->
+      <li *ngFor="let cat of catArray">{{cat}}</li>
     </ul>
 </div>
 

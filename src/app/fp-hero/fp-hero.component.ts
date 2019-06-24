@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from './../article.model';
 import { ArticleService } from './../article.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-fp-hero',
   templateUrl: './fp-hero.component.html',
@@ -10,12 +11,12 @@ export class FpHeroComponent implements OnInit {
 
   constructor(private artService: ArticleService) { }
 
-  articles: Article[];
+  articles: Observable<any[]>;
   featuredArticles: Article[];
 
   // made redundant by getFeaturedArticles() - remove and test before finishing
   getArticles(): void {
-    this.articles = this.artService.getArticles();
+    this.articles = this.artService.getFSarticles();
   }
 
   getFeaturedArticles(): void {
