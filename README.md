@@ -2,10 +2,58 @@
 
 ## Author: Dustin Herboldshimer
 
-## Version 0.0.1
-###Updated: 6/14/2019
+## Version 0.0.2
+###Updated: 6/23/2019
 
 This is a clone of the popular news/blog site, Medium.com, generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+
+## View Site on Firebase
+
+<a href='https://mediumclone-e91ae.firebaseapp.com/Medium'>https://mediumclone-e91ae.firebaseapp.com/Medium</a>
+
+## Local Server Instructions:
+
+1. FireBase Setup
+    - Login to an existin Firebase account, or create a new one
+    - Create a new project.
+    - Create a database for new project.  IMPORTANT: FIRESTORE database required.
+    - Under project settings, save your new project credintials, 'firebaseConfig'
+2. Local Setup
+    - Clone repo into a local directory from https://github.com/DuHerb/medium-clone
+    - [your-clone]$ npm install
+    - If not there, create your environment.ts and environment.prod.ts files.  They should look like the following, but with your own firebase project credintials
+      - src/app/environment/environment.ts
+        export const environment = {
+          production: false,
+          firebase: {
+            apiKey: '[your key here]',
+            authDomain: '...',
+            databaseURL: 'https://mediumclone-e91ae.firebaseio.com',
+            projectId: 'mediumclone-......',
+            storageBucket: '',
+            messagingSenderId: '....',
+            appId: '......'
+          }
+        };
+
+      -src/app/environment/environment.prod.ts
+      export const environment = {
+        production: true,
+          firebase: {
+            apiKey: '[your key here]',
+            authDomain: '...',
+            databaseURL: 'https://mediumclone-e91ae.firebaseio.com',
+            projectId: 'mediumclone-......',
+            storageBucket: '',
+            messagingSenderId: '....',
+            appId: '......'
+          }
+      };
+
+      -IMPORTANT: your config variable name, ('firebaseConfig' is the firebase default, 'firebase' in the above example), must match the path name found in the AngularFireModule.initializeApp command in the app.module.ts imports array.  I.E. AngularFireModule.initializeApp(environment.firebase)
+
+    - [your clone]$ ng serve
+    - open your browser to localhost:4200 (unless otherwise directed in CLI)
 
 ## Project Goals
 
@@ -25,6 +73,27 @@ Stretch Goals:
 - Sub Magazine/ Category Components (some Medium categories have uniqe collection pages/sub home pages)
 - Clap System
 
+## Current State
+1. Front Page
+   - Top nav and hero section styling, complete. Center hero section (small-cards) is recieving articles from firestore.
+   - Main content compononent (left section of content below hero) is styled and html is written.
+   - Main content section currently displays data pulled from firebase.  Output was used to test different ways of rendering observable data in html.
+   - TODO:
+     - Write function to query articles for left and right hero panels (large and medium cards)
+     - Build modules and link to categroy indexes via top navbar items
+     - Create query for FEATURED article link
+     - Complete FP-main-content.ts, firestore queries, and display articles on FP-main-content.html
+     - Build main content aside component
+2. Admin Dashboard
+   - Link is active
+   - Articles can be built and submitted to firestore database
+   - TODO:
+     - Style admin component
+     - Add edit-article functionality
+     - Add functionality to better control placement of articles in hero sections
+3. Article View Component
+   - No progress made
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -36,14 +105,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
